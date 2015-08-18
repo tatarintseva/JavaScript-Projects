@@ -1,0 +1,32 @@
+<!-- 
+* Дано действительное число A. Получить:
+* целую часть числа exp(A); 
+* число tg(A), округленное до ближайшего целого; 
+* число  без дробной части.
+ -->
+
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	</head>
+	
+	<script>
+		function getRandom(){
+			var min = 0,
+				max = 10;
+		return Math.random() * (max - min) + min;
+		}
+
+		var A = getRandom();
+		console.log("Number A = " + A);
+		console.log("Whole number of exp(A) = ", Math.floor(Math.exp(A)));
+		console.log("Round for tg(A) = ", Math.round(Math.tan(A)));
+		console.log("Whole number of A = ", Math.floor(A));
+
+	</script>
+
+	<body>
+	</body>
+
+</html>
