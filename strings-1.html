@@ -1,0 +1,61 @@
+<!-- A list of positive whole numbers is given. The numbers are equal to the price of the good in cents (Ex. 317, 5005, 100 etc.). Output should be the price in dollars and cents regarding the word ending of the word (cent/cents, dollar/dollars)  -->
+
+<!DOCTYPE HTML>
+<html>
+	<script>
+		var prices = [],
+			num = 10;
+
+		generate();
+		console.log(prices);	
+
+		for (var i=0; i < num; i++){
+			convert(prices[i]/100);
+		}
+
+		function generate(){
+			for (var i=1; i <= num; i++){
+				prices.push(Math.floor(Math.random() * 1000) + 1);
+			}
+			return prices;
+		}
+
+		function convert(price){
+			var dollars = Math.floor(price),
+				cents = (((price - dollars).toFixed(2)).toString()).split('.'),
+		
+			cents = parseInt(cents[1]);
+
+			console.log(dollar(dollars) + cent(cents));
+		}
+
+		function dollar(d){
+			var str;
+			if (d === 1){
+				str = "1 dollar ";
+			}
+			else if (d > 1){
+				str = d + " dollars ";
+			}
+			else{
+				str = "";
+			}
+			return str;
+		}
+
+		function cent(c){
+			var str;
+			if (c === 1){
+				str = "1 cent";
+			}
+			else if (c > 1){
+				str = c + " cents";	
+			}
+			else{
+				str = "";
+			}
+			return str;
+		}
+
+	</script>
+</html>
