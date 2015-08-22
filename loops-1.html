@@ -1,22 +1,23 @@
+<!DOCTYPE HTML>
+
 <!-- Create a table for function tg(x) in interval (0deg,90deg) with step 10deg -->
 
-<!DOCTYPE HTML>
 <html>
 <script>
-	function tangens(x){
-		return Math.tan(x).toFixed(2);
-	}
+  function tangens(x){
+    return Math.tan(x).toFixed(2);
+  }
 
 
-	for (var deg=0; deg<=90; deg=deg+10){
-		var rad = deg / 180 * Math.PI;
-		if (deg === 90){
-			console.log("tg(" + deg + ") is not defined")
-		}
-		else{
-			console.log("tg(" + deg + ") = " + tangens(rad));		
-		}
-	}
+  for (var deg=0; deg<=90; deg=deg+10){
+    var rad = deg / 180 * Math.PI;
+    if (deg === 90){
+      console.log("tg(" + deg + ") is not defined")
+    }
+    else{
+      console.log("tg(" + deg + ") = " + tangens(rad));   
+    }
+  }
 
-</script>
+  </script>
 </html>

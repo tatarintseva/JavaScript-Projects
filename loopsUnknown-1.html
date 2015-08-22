@@ -1,24 +1,25 @@
-<!-- According the given formula 1/((2k-1)(2k+1)) for k elements in series count the sum of all series elements, which are less than eps
- -->
-
 <!DOCTYPE HTML>
+
+<!-- According the given formula 1/((2k-1)(2k+1)) for k elements in series count the sum of all series elements, which are less than eps
+-->
+
 <html>
-	<script type="text/javascript">
-		var eps = 0.001,
-			k = 1,
-			sum = 0,
-			element = 1/((2*k-1)*(2*k+1));
+  <script type="text/javascript">
+    var eps = 0.001,
+      k = 1,
+      sum = 0,
+      element = 1/((2*k-1)*(2*k+1));
 
-		console.log("element =", element);
+    console.log("element =", element);
 
-		while (element >= eps){
-			sum = sum + element;
-			console.log("element =", element);
-			k++;
-			element = 1/((2*k-1)*(2*k+1));	
-		}
+    while (element >= eps){
+      sum = sum + element;
+      console.log("element =", element);
+      k++;
+      element = 1/((2*k-1)*(2*k+1));  
+    }
 
-		console.log("sum =", sum);
+    console.log("sum =", sum);
 
-	</script>
+  </script>
 </html>

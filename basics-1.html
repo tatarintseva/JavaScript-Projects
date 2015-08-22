@@ -1,33 +1,25 @@
+<!DOCTYPE html>
  <!-- 
  * Real number A is given. Get:
  * whole number of exp(A);
  * number tg(A), and round it to the nearest integer;
  * number without fraction
-  -->
+-->
 
-<!-- 
-* Дано действительное число A. Получить:
-* целую часть числа exp(A); 
-* число tg(A), округленное до ближайшего целого; 
-* число  без дробной части.
- -->
+<html>  
+<script>
+  function getRandom(){
+    var min = 0, max = 10;
+    return Math.random() * (max - min) + min;
+  }
 
-<!DOCTYPE html>
-<html>
-	
-	<script>
-		function getRandom(){
-			var min = 0,
-				max = 10;
-			return Math.random() * (max - min) + min;
-		}
+  var A = getRandom();
 
-		var A = getRandom();
-		console.log("Number A = " + A);
-		console.log("Whole number of exp(A) = ", Math.floor(Math.exp(A)));
-		console.log("Round for tg(A) = ", Math.round(Math.tan(A)));
-		console.log("Whole number of A = ", Math.floor(A));
+  console.log("Number A = " + A);
+  console.log("Whole number of exp(A) = ", Math.floor(Math.exp(A)));
+  console.log("Round for tg(A) = ", Math.round(Math.tan(A)));
+  console.log("Whole number of A = ", Math.floor(A));
 
-	</script>
-	
+  </script>
+  
 </html>

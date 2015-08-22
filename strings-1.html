@@ -3,42 +3,42 @@
 <!-- A list of positive whole numbers is given. The numbers are equal to the price of the good in cents (Ex. 317, 5005, 100 etc.). Output should be the price in dollars and cents regarding the word ending of the word (cent/cents, dollar/dollars)  -->
 
 <html>
-	<script>
-		var prices = [],
-			num = 10;
+  <script>
+    var prices = [],
+      num = 10;
 
-		for (var i=0; i < num; i++){
-			prices = generate();
-			console.log("Price of the good in cents = " + prices[i]);
-			convert(prices[i]/100);
-		}
+    for (var i=0; i < num; i++){
+      prices = generate();
+      console.log("Price of the good in cents = " + prices[i]);
+      convert(prices[i]/100);
+    }
 
-		function generate(){
-			prices.push(Math.floor(Math.random() * 1000) + 1);
-			return prices;
-		}
+    function generate(){
+      prices.push(Math.floor(Math.random() * 1000) + 1);
+      return prices;
+    }
 
-		function convert(price){
-			var dollars = Math.floor(price),
-				cents = (((price - dollars).toFixed(2)).toString()).split('.'),
-		
-			cents = parseInt(cents[1]);
-			console.log(dollar(dollars) + cent(cents));
-		}
+    function convert(price){
+      var dollars = Math.floor(price),
+        cents = (((price - dollars).toFixed(2)).toString()).split('.'),
+    
+      cents = parseInt(cents[1]);
+      console.log(dollar(dollars) + cent(cents));
+    }
 
-		function dollar(d){
-			if (d !== 0){
-				return d + ' dollar' + (d === 1 ? ' ' : 's ')
-			} 
-			else return '';
-		}
+    function dollar(d){
+      if (d !== 0){
+        return d + ' dollar' + (d === 1 ? ' ' : 's ')
+      } 
+      else return '';
+    }
 
-		function cent(c){
-			if (c !== 0){
-				return c + ' cent' + (c === 1 ? ' ' : 's')
-			}
-			else return ' ';
-		}
+    function cent(c){
+      if (c !== 0){
+        return c + ' cent' + (c === 1 ? ' ' : 's')
+      }
+      else return ' ';
+    }
 
-	</script>
+  </script>
 </html>
