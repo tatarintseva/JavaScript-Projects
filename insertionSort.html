@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<!-- Realization of the algorythm  for insertion sort -->
+
+<html>
+  <script type="text/javascript">
+    var a = [],
+        num = 5;
+
+    for (var i=1; i<=num; i++){
+      a.push(Math.floor(Math.random() * 100 + 1));
+    }
+
+    console.log("Array is unsorted = " + a);
+
+    for (var j=1; j<num; j++){
+      var key = a[j];
+      var i = j-1;
+      while (i >= 0 && a[i] > key){
+        a[i+1] = a[i];
+        i--;
+      }
+      a[i+1] = key;
+      console.log("a current = " + a)
+    }
+    
+    console.log("Array is sorted = " + a);
+
+  </script>
+</html>
+
