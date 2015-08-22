@@ -1,6 +1,7 @@
+<!DOCTYPE HTML>
+
 <!-- A list of positive whole numbers is given. The numbers are equal to the price of the good in cents (Ex. 317, 5005, 100 etc.). Output should be the price in dollars and cents regarding the word ending of the word (cent/cents, dollar/dollars)  -->
 
-<!DOCTYPE HTML>
 <html>
 	<script>
 		var prices = [],
@@ -26,31 +27,17 @@
 		}
 
 		function dollar(d){
-			var str;
-			if (d === 1){
-				str = "1 dollar ";
-			}
-			else if (d > 1){
-				str = d + " dollars ";
-			}
-			else{
-				str = "";
-			}
-			return str;
+			if (d !== 0){
+				return d + ' dollar' + (d === 1 ? ' ' : 's ')
+			} 
+			else return '';
 		}
 
 		function cent(c){
-			var str;
-			if (c === 1){
-				str = "1 cent";
+			if (c !== 0){
+				return c + ' cent' + (c === 1 ? ' ' : 's')
 			}
-			else if (c > 1){
-				str = c + " cents";	
-			}
-			else{
-				str = "";
-			}
-			return str;
+			else return ' ';
 		}
 
 	</script>
