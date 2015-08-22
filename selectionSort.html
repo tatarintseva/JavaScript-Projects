@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<!-- Realization of the algorithm  for selection sort -->
+
+<html>
+  <script type="text/javascript">
+    var a = [],
+        num = 15,
+        minNum,
+        temp,
+        min,
+        change = 0;
+
+    for (var i=1; i<=num; i++){
+      a.push(Math.floor(Math.random() * 100 + 1));
+    }
+
+    console.log("Array is unsorted = " + a);
+
+    for (var j=0; j<num; j++){       
+      min = a[j];
+      for (var i=j+1; i<num; i++){
+        if (a[i] < min){
+          min = a[i];
+          minNum = i;
+          change++;
+        }
+      }
+
+      if (change !== 0){
+        temp = a[minNum];
+        a[minNum] = a[j];
+        a[j] = temp;
+      }
+
+      console.log("Current array = " + a); 
+      change = 0;
+    }
+
+    console.log("Array is sorted = " + a); 
+
+  </script>
+</html>
