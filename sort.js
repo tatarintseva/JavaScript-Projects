@@ -18,7 +18,7 @@ function insertion(a) {
     }
     a[i + 1] = key;
   }
-  console.log('Array is sorted using Insertion Sort = ' + a);
+  //console.log('Array is sorted using Insertion Sort = ' + a);
   return a;
 }
 
@@ -33,14 +33,14 @@ function bubble(a) {
       }
     }
   }
-  console.log('Array is sorted using Bubble Sort = ' + a);
+  //console.log('Array is sorted using Bubble Sort = ' + a);
 }
 
 function selection(a) {
   var change = 0,
     minNum, tmp, min;
 
-         for (var j = 0; j < a.length; j++) {
+    for (var j = 0; j < a.length; j++) {
     min = a[j];
 
     for (var i = j + 1; i < a.length; i++) {
@@ -59,27 +59,67 @@ function selection(a) {
 
     change = 0;
   }
-
-  console.log('Array is sorted using Selection sort = ' + a);
+  //console.log('Array is sorted using Selection sort = ' + a);
 }
 
-function timeCount(a){
-    var start = new Date().getTime();
-    insertion(a);
+function timeCount(start){
     var end = new Date().getTime();
+    console.log('start = ' + start + 'end=' + end);
     return end-start;
 }
 
-var a = arrayCreation(500),
-    b = arrayCreation(1000),
-    c = arrayCreation(1500);
+var unsortedArrays = [],
+    start,
+    firstArrayLength = 5000,
+    secondArrayLength = 10000,
+    thirdArrayLength = 15000;
 
-console.log('Initial array = ' + a);
-document.getElementById('insertion500').innerHTML = timeCount(a);
-document.getElementById('insertion1000').innerHTML = timeCount(b);
-document.getElementById('insertion1500').innerHTML = timeCount(c);
+unsortedArrays.push(arrayCreation(firstArrayLength), arrayCreation(secondArrayLength), arrayCreation(thirdArrayLength));
 
-bubble(a);
-selection(a);
+document.getElementById('firstArrayLength').innerHTML = firstArrayLength + ' elements';
+document.getElementById('secondArrayLength').innerHTML = secondArrayLength + ' elements';
+document.getElementById('thirdArrayLength').innerHTML = thirdArrayLength + ' elements';
 
+//First array
 
+start = new Date().getTime();
+insertion(unsortedArrays[0]);
+document.getElementById('insertion5000').innerHTML = timeCount(start);
+
+start = new Date().getTime();
+bubble(unsortedArrays[0]);
+document.getElementById('bubble5000').innerHTML = timeCount(start);
+
+start = new Date().getTime();
+selection(unsortedArrays[0]);
+document.getElementById('selection5000').innerHTML = timeCount(start);
+
+//Second array
+
+start = new Date().getTime();
+insertion(unsortedArrays[1]);
+document.getElementById('insertion10000').innerHTML = timeCount(start);
+
+start = new Date().getTime();
+bubble(unsortedArrays[1]);
+document.getElementById('bubble10000').innerHTML = timeCount(start);
+
+start = new Date().getTime();
+selection(unsortedArrays[1]);
+document.getElementById('selection10000').innerHTML = timeCount(start);
+
+//Third array
+
+start = new Date().getTime();
+insertion(unsortedArrays[2]);
+document.getElementById('insertion15000').innerHTML = timeCount(start);
+
+start = new Date().getTime();
+bubble(unsortedArrays[2]);
+document.getElementById('bubble15000').innerHTML = timeCount(start);
+
+start = new Date().getTime();
+selection(unsortedArrays[2]);
+document.getElementById('selection15000').innerHTML = timeCount(start);
+
+console.log(start);
