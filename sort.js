@@ -40,7 +40,7 @@ function selection(a) {
   var change = 0,
     minNum, tmp, min;
 
-  for (var j = 0; j < a.length; j++) {
+         for (var j = 0; j < a.length; j++) {
     min = a[j];
 
     for (var i = j + 1; i < a.length; i++) {
@@ -63,8 +63,23 @@ function selection(a) {
   console.log('Array is sorted using Selection sort = ' + a);
 }
 
-var a = arrayCreation(10);
+function timeCount(a){
+    var start = new Date().getTime();
+    insertion(a);
+    var end = new Date().getTime();
+    return end-start;
+}
+
+var a = arrayCreation(500),
+    b = arrayCreation(1000);
+    c = arrayCreation(1500);
+
 console.log('Initial array = ' + a);
-insertion(a);
+document.getElementById('insertion500').innerHTML = timeCount(a);
+document.getElementById('insertion1000').innerHTML = timeCount(b);
+document.getElementById('insertion1500').innerHTML = timeCount(c);
+
 bubble(a);
 selection(a);
+
+
