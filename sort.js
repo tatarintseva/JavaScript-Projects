@@ -71,7 +71,7 @@ function timeCount(a){
 }
 
 var a = arrayCreation(500),
-    b = arrayCreation(1000);
+    b = arrayCreation(1000),
     c = arrayCreation(1500);
 
 console.log('Initial array = ' + a);
