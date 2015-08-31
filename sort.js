@@ -43,13 +43,13 @@ function selection(a) {
     for (var j = 0; j < a.length; j++) {
     min = a[j];
 
-    for (var i = j + 1; i < a.length; i++) {
-      if (a[i] < min) {
-        min = a[i];
-        minNum = i;
-        change++;
-      }
-    }
+        for (var i = j + 1; i < a.length; i++) {
+            if (a[i] < min) {
+            min = a[i];
+            minNum = i;
+            change++;
+            }
+        }
 
     if (change !== 0) {
       tmp = a[minNum];
@@ -123,3 +123,5 @@ selection(unsortedArrays[2]);
 document.getElementById('selection15000').innerHTML = timeCount(start);
 
 console.log(start);
+
+$('.sort').append(' ms');
