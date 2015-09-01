@@ -68,60 +68,70 @@ function timeCount(start){
     return end-start;
 }
 
+function cellTimeInfo(){
+
+    //First array
+    start = new Date().getTime();
+    insertion(unsortedArrays[0]);
+    document.getElementById('insertion5000').innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    bubble(unsortedArrays[0]);
+    document.getElementById('bubble5000').innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    selection(unsortedArrays[0]);
+    document.getElementById('selection5000').innerHTML = timeCount(start);
+
+    //Second array
+
+    start = new Date().getTime();
+    insertion(unsortedArrays[1]);
+    document.getElementById('insertion10000').innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    bubble(unsortedArrays[1]);
+    document.getElementById('bubble10000').innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    selection(unsortedArrays[1]);
+    document.getElementById('selection10000').innerHTML = timeCount(start);
+
+    //Third array
+
+    start = new Date().getTime();
+    insertion(unsortedArrays[2]);
+    document.getElementById('insertion15000').innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    bubble(unsortedArrays[2]);
+    document.getElementById('bubble15000').innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    selection(unsortedArrays[2]);
+    document.getElementById('selection15000').innerHTML = timeCount(start);
+
+    $('.sort').append(' ms');
+}
+
+(function () {
+    unsortedArrays.push(arrayCreation(firstArrayLength), arrayCreation(secondArrayLength), arrayCreation(thirdArrayLength));
+
+    document.getElementById('firstArrayLength').innerHTML = firstArrayLength + ' elements';
+    document.getElementById('secondArrayLength').innerHTML = secondArrayLength + ' elements';
+    document.getElementById('thirdArrayLength').innerHTML = thirdArrayLength + ' elements';
+
+
+    var s = '<i class="fa fa-spinner fa-spin"></i>';
+    $('.sort').each(function(){
+        $(this).append(s);
+    });
+
+    setTimeout(cellTimeInfo(), 4000);
+})();
+
 var unsortedArrays = [],
     start,
     firstArrayLength = 5000,
     secondArrayLength = 10000,
     thirdArrayLength = 15000;
-
-unsortedArrays.push(arrayCreation(firstArrayLength), arrayCreation(secondArrayLength), arrayCreation(thirdArrayLength));
-
-document.getElementById('firstArrayLength').innerHTML = firstArrayLength + ' elements';
-document.getElementById('secondArrayLength').innerHTML = secondArrayLength + ' elements';
-document.getElementById('thirdArrayLength').innerHTML = thirdArrayLength + ' elements';
-
-//First array
-
-start = new Date().getTime();
-insertion(unsortedArrays[0]);
-document.getElementById('insertion5000').innerHTML = timeCount(start);
-
-start = new Date().getTime();
-bubble(unsortedArrays[0]);
-document.getElementById('bubble5000').innerHTML = timeCount(start);
-
-start = new Date().getTime();
-selection(unsortedArrays[0]);
-document.getElementById('selection5000').innerHTML = timeCount(start);
-
-//Second array
-
-start = new Date().getTime();
-insertion(unsortedArrays[1]);
-document.getElementById('insertion10000').innerHTML = timeCount(start);
-
-start = new Date().getTime();
-bubble(unsortedArrays[1]);
-document.getElementById('bubble10000').innerHTML = timeCount(start);
-
-start = new Date().getTime();
-selection(unsortedArrays[1]);
-document.getElementById('selection10000').innerHTML = timeCount(start);
-
-//Third array
-
-start = new Date().getTime();
-insertion(unsortedArrays[2]);
-document.getElementById('insertion15000').innerHTML = timeCount(start);
-
-start = new Date().getTime();
-bubble(unsortedArrays[2]);
-document.getElementById('bubble15000').innerHTML = timeCount(start);
-
-start = new Date().getTime();
-selection(unsortedArrays[2]);
-document.getElementById('selection15000').innerHTML = timeCount(start);
-
-console.log(start);
-
-$('.sort').append(' ms');
