@@ -114,6 +114,13 @@ function cellTimeInfo(){
     $('.sort').append(' ms');
 }
 
+
+var unsortedArrays = [],
+    start,
+    firstArrayLength = 5000,
+    secondArrayLength = 10000,
+    thirdArrayLength = 15000;
+
 (function () {
     unsortedArrays.push(arrayCreation(firstArrayLength), arrayCreation(secondArrayLength), arrayCreation(thirdArrayLength));
 
@@ -130,8 +137,3 @@ function cellTimeInfo(){
     setTimeout(cellTimeInfo(), 4000);
 })();
 
-var unsortedArrays = [],
-    start,
-    firstArrayLength = 5000,
-    secondArrayLength = 10000,
-    thirdArrayLength = 15000;
