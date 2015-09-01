@@ -5,9 +5,14 @@
 <html>
   <head>
     <title>Sorting comparison</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css" />
     <style>
 
-        table{
+        @font-face {
+
+        }
+        .sortTable{
             width:50%;
             border-collapse: collapse;
             border:1px solid;
@@ -19,9 +24,10 @@
             border:1px solid;
         }
 
-        table .tableCaption{
-            margin: 20px 0px;
+        .sortTable .tableCaption{
+            margin: 20px 0;
             font-size: 2em;
+            text-align: center;
         }
 
         td.sort{
@@ -33,6 +39,7 @@
             width: 10%;
         }
 
+        tr th,
         .sort{
             text-align: center;
         }
@@ -41,7 +48,7 @@
   </head>
 
   <body>
-    <table>
+    <table class="sortTable">
         <caption class="tableCaption">Sorting comparison</caption>
         <tr>
             <th>Algorithm name</th>
@@ -70,8 +77,9 @@
         </tr>
 
     </table>
-    
+
     <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
     <script type="text/javascript" src="sort.js"></script>
 
   </body>
