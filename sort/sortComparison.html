@@ -17,14 +17,14 @@
             line-height: 2em;
         }
 
-        th, td{
-            border:1px solid;
-        }
-
         .sortTable .tableCaption{
-            margin: 20px 0;
+            margin: 1em 0;
             font-size: 2em;
             text-align: center;
+        }
+
+        th, td{
+            border:1px solid;
         }
 
         td.sort{
@@ -39,6 +39,11 @@
         tr th,
         .sort{
             text-align: center;
+        }
+
+        .startSortButton{
+            text-align: center;
+            margin-top: 2em;
         }
 
     </style>
@@ -74,6 +79,10 @@
         </tr>
 
     </table>
+
+    <div class="startSortButton">
+        <button type="button" class="btn btn-primary" id="startSort">Start Sort</button>
+    </div>
 
     <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="bootstrap.min.js"></script>

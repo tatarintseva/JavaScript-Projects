@@ -18,7 +18,7 @@ function insertion(a) {
     }
     a[i + 1] = key;
   }
-  //console.log('Array is sorted using Insertion Sort = ' + a);
+  console.log('Array is sorted using Insertion Sort = ');
   return a;
 }
 
@@ -33,7 +33,7 @@ function bubble(a) {
       }
     }
   }
-  //console.log('Array is sorted using Bubble Sort = ' + a);
+  console.log('Array is sorted using Bubble Sort = ');
 }
 
 function selection(a) {
@@ -59,7 +59,7 @@ function selection(a) {
 
     change = 0;
   }
-  //console.log('Array is sorted using Selection sort = ' + a);
+  console.log('Array is sorted using Selection sort = ');
 }
 
 function timeCount(start){
@@ -114,7 +114,6 @@ function cellTimeInfo(){
     $('.sort').append(' ms');
 }
 
-
 var unsortedArrays = [],
     start,
     firstArrayLength = 5000,
@@ -128,12 +127,18 @@ var unsortedArrays = [],
     document.getElementById('secondArrayLength').innerHTML = secondArrayLength + ' elements';
     document.getElementById('thirdArrayLength').innerHTML = thirdArrayLength + ' elements';
 
-
+    //Sign for showing sorting is in progress
     var s = '<i class="fa fa-spinner fa-spin"></i>';
     $('.sort').each(function(){
         $(this).append(s);
     });
 
-    setTimeout(cellTimeInfo(), 4000);
+    $('#startSort').on('click', function(){
+        unsortedArrays=[];
+        unsortedArrays.push(arrayCreation(firstArrayLength), arrayCreation(secondArrayLength), arrayCreation(thirdArrayLength));
+        cellTimeInfo();
+        console.log('new');
+    });
+    //cellTimeInfo();
 })();
 
