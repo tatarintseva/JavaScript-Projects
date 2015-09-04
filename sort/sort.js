@@ -33,7 +33,9 @@ function bubble(a) {
       }
     }
   }
+
   console.log('Array is sorted using Bubble Sort = ');
+    return a;
 }
 
 function selection(a) {
@@ -59,7 +61,16 @@ function selection(a) {
 
     change = 0;
   }
+
   console.log('Array is sorted using Selection sort = ');
+    return a;
+}
+
+function innerSort(a){
+    a.sort(function(x,y){return(x-y)});
+    console.log('Array is sorted using Built-in sort = ');
+    console.log('length = ', a.length);
+    return a;
 }
 
 function timeCount(start){
@@ -73,43 +84,55 @@ function cellTimeInfo(){
     //First array
     start = new Date().getTime();
     insertion(unsortedArrays[0]);
-    document.getElementById('insertion5000').innerHTML = timeCount(start);
+    document.getElementById('insertion' + firstArrayLength).innerHTML = timeCount(start);
 
     start = new Date().getTime();
     bubble(unsortedArrays[0]);
-    document.getElementById('bubble5000').innerHTML = timeCount(start);
+    document.getElementById('bubble' + firstArrayLength).innerHTML = timeCount(start);
 
     start = new Date().getTime();
     selection(unsortedArrays[0]);
-    document.getElementById('selection5000').innerHTML = timeCount(start);
+    document.getElementById('selection' + firstArrayLength).innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    innerSort(unsortedArrays[0]);
+    document.getElementById('innerSort' + firstArrayLength).innerHTML = timeCount(start);
 
     //Second array
 
     start = new Date().getTime();
     insertion(unsortedArrays[1]);
-    document.getElementById('insertion10000').innerHTML = timeCount(start);
+    document.getElementById('insertion' + secondArrayLength).innerHTML = timeCount(start);
 
     start = new Date().getTime();
     bubble(unsortedArrays[1]);
-    document.getElementById('bubble10000').innerHTML = timeCount(start);
+    document.getElementById('bubble' + secondArrayLength).innerHTML = timeCount(start);
 
     start = new Date().getTime();
     selection(unsortedArrays[1]);
-    document.getElementById('selection10000').innerHTML = timeCount(start);
+    document.getElementById('selection' + secondArrayLength).innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    innerSort(unsortedArrays[1]);
+    document.getElementById('innerSort' + secondArrayLength).innerHTML = timeCount(start);
 
     //Third array
 
     start = new Date().getTime();
     insertion(unsortedArrays[2]);
-    document.getElementById('insertion15000').innerHTML = timeCount(start);
+    document.getElementById('insertion' + thirdArrayLength).innerHTML = timeCount(start);
 
     start = new Date().getTime();
     bubble(unsortedArrays[2]);
-    document.getElementById('bubble15000').innerHTML = timeCount(start);
+    document.getElementById('bubble' + thirdArrayLength).innerHTML = timeCount(start);
 
     start = new Date().getTime();
     selection(unsortedArrays[2]);
-    document.getElementById('selection15000').innerHTML = timeCount(start);
+    document.getElementById('selection' + thirdArrayLength).innerHTML = timeCount(start);
+
+    start = new Date().getTime();
+    innerSort(unsortedArrays[2]);
+    document.getElementById('innerSort' + thirdArrayLength).innerHTML = timeCount(start);
 
     $('.sort').append(' ms');
 }
@@ -128,10 +151,11 @@ var unsortedArrays = [],
     document.getElementById('thirdArrayLength').innerHTML = thirdArrayLength + ' elements';
 
     //Sign for showing sorting is in progress
-    var s = '<i class="fa fa-spinner fa-spin"></i>';
     $('.sort').each(function(){
-        $(this).append(s);
+        $(this).append('<i class="fa fa-spinner fa-spin"></i>');
     });
+
+    cellTimeInfo();
 
     $('#startSort').on('click', function(){
         unsortedArrays=[];
@@ -139,6 +163,5 @@ var unsortedArrays = [],
         cellTimeInfo();
         console.log('new');
     });
-    //cellTimeInfo();
 })();
 
